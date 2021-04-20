@@ -1,0 +1,19 @@
+<!-- <app-servers></app-servers> -->
+<!-- <div class="container">
+    <p>Add new servers or blueprints!</p>
+    <label for="servername">Server Name</label>
+    <input type="text" class="form-control">
+    <label for="servercontent">Server Content</label>
+
+    <input type="text" class="form-control">
+    <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+    <button class="btn btn-primary" (click)="onAddBluePrint()">Add Server Blueprint</button>
+ 
+</div> -->
+<div class="panel panel-default">
+    <div class="panel-heading">{{element.name}}</div>
+        <div class="panel-body">
+            <p *ngIf="element.type ==='server'" style="color:yellow">{{element.content}}</p>
+            <p *ngIf="element.type==='blueprint'" style="color:orange">{{element.content}}</p>
+        </div>
+</div>

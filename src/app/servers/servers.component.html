@@ -1,0 +1,72 @@
+
+<!-- <div class="container"> -->
+
+
+    <!-- type something:<input type="text" 
+    class="form-control" 
+    (input)="onUpdateServerName($event)">
+    <p>{{ serverName }}</p>
+    <hr> -->
+    
+    <!-- two way binding -->
+    <!-- type something:<input type="text"
+     class="form-control"
+     [(ngModel)]="serverName">
+    <p>{{ serverName }}</p>
+
+    <button class="btn btn-primary" 
+    [disabled]="!allowNewServer" 
+    (click)="onCreateServer()">Add a Server</button> -->
+    <!-- <p>{{serverCreationStatus}}</p> -->
+    <!-- <p>{{ allowNewServer}}</p> -->
+    <!-- <p *ngIf="serverCreated; else noServer">server with the name <b>{{serverName}}</b> was created</p>
+    <ng-template #noServer>
+        <p>No server was created</p>
+    </ng-template>
+    <hr>
+
+    
+    <h3>Assignment1:Two-way-binding & String Interpolation</h3>
+    <input type="text"
+     class="form-control"
+    [(ngModel)]='username'>
+    <p>This is my username: {{ username }}</p>
+
+    <button class="btn btn-danger"
+     [disabled]="!username" 
+     (click)="onUpdateUsername()">Click Me!</button>
+
+     <hr>
+     <h2>Assignment 2: Directives</h2> -->
+     <!-- <button (click)="displayPar()" class="btn btn-primary">Display Details</button>
+     <p>{{content}}</p> -->
+     <!-- <button (click)="displayPar()"  class="btn btn-primary">Display Details</button>
+     <p *ngIf="displayContent">Secret password is mugure</p>
+     <div>
+         <p *ngFor="let log of logs; let i=index" 
+         [ngStyle]="{backgroundColor:i>=4?'blue':'white'}"
+         [ngClass]="{'white-numbs':i>=4}">{{log}}</p>
+     </div>
+
+</div>
+<hr>
+<app-server *ngFor="let server of servers"></app-server> -->
+
+<div class="container">
+    <p>Add new servers or blueprints!</p>
+    <label for="servername">Server Name</label>
+    <input type="text" class="form-control">
+    <label for="servercontent">Server Content</label>
+
+    <input type="text" class="form-control">
+    <button class="btn btn-primary" (click)="showServer()">Add Server</button>
+    <button class="btn btn-primary" (click)="showBluePrint()">Add Server Blueprint</button>
+ 
+</div>
+<!-- <div class="panel panel-default" *ngFor="let element of serverElements">
+    <div class="panel-heading">{{element.name}}</div>
+        <div class="panel-body">
+            <p *ngIf="element.type ==='server'" style="color:yellow">{{element.content}}</p>
+            <p *ngIf="element.type==='blueprint'" style="color:orange">{{element.content}}</p>
+        </div>
+</div> -->
