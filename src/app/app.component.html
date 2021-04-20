@@ -2,20 +2,25 @@
 
 <div class="container">
     <div class="container">
-        <app-cockpit 
+        <app-cockpit
         (serverCreated)="onServerAdded($event)"
-        (blueprintCreated)="onBluePrintAdded($event)"></app-cockpit>
+        (blueprintCreated)="onBluePrintAdded($event)">
+        </app-cockpit>
         <hr>
     </div>
     <div class="row">
         <div class="col-md-12">
             <!-- <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list> 
+            <app-shopping-list></app-shopping-list>
             <hr> -->
-            <app-server-element 
-            *ngFor="let element of serverElements" 
-            [Srvelement]="element"></app-server-element>
+            <app-server-element
+            *ngFor="let element of serverElements"
+            [srvElement]="element"></app-server-element>
             <!-- <app-servers></app-servers> -->
         </div>
     </div>
+    <app-gamecontrol (gameStarted)="onGameStart($event)">
+    </app-gamecontrol>
+  <app-odd *ngFor="let odd of oddNumbers" [number]="odd"></app-odd>
+  <app-even *ngFor="let even of evenNumbers" [number]="even"></app-even>
 </div>

@@ -6,22 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // serverElements=[];
-  serverElements=[];
-
-  onServerAdded(serverData:{serverName:string, content:string}){
+  serverElements = [];
+  oddNumbers = [];
+  evenNumbers = [];
+  title;
+  onServerAdded(serverData: {serverName: string, content: string}): any{
       this.serverElements.push({
-        type:'server',
-        name:serverData.serverName,
-        content:serverData.content
+        type: 'server',
+        name: serverData.serverName,
+        content: serverData.content
       });
     }
-  
-  onBluePrintAdded(blueprintData:{serverName:string,content:string}){
+
+  onBluePrintAdded(blueprintData: {serverName: string, content: string}): any{
     this.serverElements.push({
-      type:'blueprint',
-      name:blueprintData.serverName,
-      content:blueprintData.content
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.content
     });
-  } 
+  }
+  onGameStart(firedNumber: number): any{
+    if (firedNumber % 2 === 0){
+      this.evenNumbers.push(firedNumber);
+    }else{
+      this.oddNumbers.push(firedNumber);
+    }
+
+  }
 }

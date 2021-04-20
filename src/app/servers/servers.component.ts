@@ -8,29 +8,28 @@ import { FormsModule } from '@angular/forms';
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
-  serverCreationStatus = "No server was created";
-  username = "one";
-  servers = ['testserver1','testserver2'];
+  serverCreationStatus = 'No server was created';
+  username = 'one';
+  servers = ['testserver1', 'testserver2'];
   displayContent = false;
-  displayContent1= false;
-  logs=[];
+  displayContent1 = false;
+  logs = [];
 
-  serverName="";
-  content= "";
-  @Output() serverCreated = new EventEmitter<{serverName: string, content:string}>();
-  @Output() blueprintCreated = new EventEmitter<{serverName: string, content:string}>();
-  
+  serverName = '';
+  content = '';
+  @Output() serverCreated = new EventEmitter<{serverName: string, content: string}>();
+  @Output() blueprintCreated = new EventEmitter<{serverName: string, content: string}>();
 
-  constructor() { 
+  constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
-    },2000)
+    }, 2000);
   }
 
   ngOnInit(): void {
   }
 
- 
+
 
   // showServer(){
   //   this.serverElements.push({
@@ -54,30 +53,30 @@ export class ServersComponent implements OnInit {
     this.serverCreationStatus = 'server was created! Name is:' + this.serverName;
   }
 
-  onUpdateServerName(event:Event){
-    this.serverName = (<HTMLInputElement>event.target).value;
+  onUpdateServerName(event: Event){
+    this.serverName = (event.target as HTMLInputElement).value;
     // console.log(event);
   }
 
   onUpdateUsername(){
-    this.username = "";
+    this.username = '';
   }
 
   displayPar(){
-    this.displayContent=!this.displayContent;
+    this.displayContent = !this.displayContent;
     // this.logs.push(this.logs.length + 1);
     this.logs.push(Date());
 
 
   }
 
-  // showServer(){
-  //   this.displayContent = !this.displayContent;
-    
-  // }
+  showServer(){
+    this.displayContent = !this.displayContent;
 
-  // showBluePrint(){
-  //   this.displayContent1 = !this.displayContent1;
-  // }
+  }
+
+  showBluePrint(){
+    this.displayContent1 = !this.displayContent1;
+  }
 
 }
