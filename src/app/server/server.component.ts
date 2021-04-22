@@ -8,7 +8,7 @@ export class ServerComponent {
     serverId = 10;
     serverStatus = 'offline';
 
-    getServerStatus() {
+    getServerStatus(): any {
         return this.serverStatus;
     }
 
@@ -16,8 +16,7 @@ export class ServerComponent {
         this.serverStatus = Math.random() > 0.5 ? 'offline' : 'online';
     }
 
-  // tslint:disable-next-line:typedef
-    getColor(){
+    getColor(): any{
         return this.serverStatus === 'online' ? 'green' : 'red';
     }
 }

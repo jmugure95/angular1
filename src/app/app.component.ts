@@ -9,6 +9,7 @@ export class AppComponent {
   serverElements = [];
   oddNumbers = [];
   evenNumbers = [];
+  loadedFeature = false;
   title;
   onServerAdded(serverData: {serverName: string, content: string}): any{
       this.serverElements.push({
@@ -31,6 +32,11 @@ export class AppComponent {
     }else{
       this.oddNumbers.push(firedNumber);
     }
+
+  }
+
+  onShowRecipeNow(feature: boolean): any{
+    this.loadedFeature = feature;
 
   }
 }
